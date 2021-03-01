@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Movie>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-3">
+        @*@Html.Partial("_menu");*@
+        @await Component.InvokeAsync("CategoryMenu")
+    </div>
+    <div class="col-md-9">
+        @Html.Partial("_movies", Model)
+
+        <p style="color:crimson ; font-family:'Berlin Sans FB'; background-color:cornsilk; ">@ViewBag.Message</p>
+    </div>
+</div>
